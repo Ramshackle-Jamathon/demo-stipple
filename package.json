@@ -21,12 +21,12 @@
     "stats.js": "^0.17.0"
   },
   "devDependencies": {
-    "babel-core": "6.21.0",
+    "babel-core": "6.22.1",
     "babel-eslint": "7.1.1",
     "babel-loader": "6.2.10",
     "babel-plugin-transform-class-properties": "^6.6.0",
-    "babel-preset-es2015": "6.18.0",
-    "eslint": "3.13.1",
+    "babel-preset-es2015": "6.22.0",
+    "eslint": "3.14.0",
     "eslint-loader": "1.6.1",
     "shader-loader": "^1.3.0",
     "html-webpack-plugin": "2.26.0",
