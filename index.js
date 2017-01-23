@@ -9,7 +9,7 @@ import Webcam from "keep-rollin";
 const demo = {
 	stats: new Stats(),
 	defaultQuality: 1,
-	quality: 1,
+	quality: 2,
 	shader: undefined,
 	buffer: undefined,
 	lastTimeStamp: 0,
@@ -18,7 +18,8 @@ const demo = {
 	gl: undefined,
 	webcam: new Webcam(),
 	canvas: document.body.appendChild(document.createElement("canvas")),
-	uiOption: document.body.appendChild(document.createElement("input")),
+	uiStep: document.body.appendChild(document.createElement("input")),
+	uiSize: document.body.appendChild(document.createElement("input")),
 	createContext: function(){
 		this.canvas.style.width = "100%";
 		this.canvas.style.height = "100%";
@@ -52,7 +53,8 @@ const demo = {
 			//Set uniforms
 			this.shader.uniforms.uResolution = [this.canvas.width, this.canvas.height];
 			this.shader.uniforms.uGlobalTime = this.ellapsedTime / 1000;
-			this.shader.uniforms.uiOption = this.uiOption.value;
+			this.shader.uniforms.uiStep = this.uiStep.value;
+			this.shader.uniforms.uiSize = this.uiSize.value;
 
 			//Set attributes
 			this.shader.attributes.position.pointer();
@@ -111,14 +113,23 @@ const demo = {
 	init: function(){
 		this.createContext();
 		this.resizeCanvas();
-		this.uiOption.setAttribute("type", "range");
-		this.uiOption.setAttribute("min", "-0.5");
-		this.uiOption.setAttribute("max", "2");
-		this.uiOption.style.position = "absolute";
-		this.uiOption.style.right = "0";
-		this.uiOption.style.width = "200px";
-		this.uiOption.value = 0.7;
-		this.uiOption.step = 0.05;
+		this.uiStep.setAttribute("type", "range");
+		this.uiStep.setAttribute("min", "-0.5");
+		this.uiStep.setAttribute("max", "2");
+		this.uiStep.style.position = "absolute";
+		this.uiStep.style.right = "0";
+		this.uiStep.style.width = "200px";
+		this.uiStep.value = 0.7;
+		this.uiStep.step = 0.05;
+		this.uiSize.setAttribute("type", "range");
+		this.uiSize.setAttribute("min", "1.0");
+		this.uiSize.setAttribute("max", "200.0");
+		this.uiSize.style.position = "absolute";
+		this.uiSize.style.right = "0";
+		this.uiSize.style.top = "20px";
+		this.uiSize.style.width = "200px";
+		this.uiSize.value = 80.0;
+		this.uiSize.step = 1.0;
 		this.webcam.requestUserMedia();
 		
 		document.body.appendChild( this.stats.dom );
