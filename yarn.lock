@@ -1851,9 +1851,9 @@ jsprim@^1.2.2:
     json-schema "0.2.3"
     verror "1.3.6"
 
-keep-rollin@^0.0.5:
-  version "0.0.5"
-  resolved "https://registry.yarnpkg.com/keep-rollin/-/keep-rollin-0.0.5.tgz#61e6af38ee5e6b69b9ad29b6fe10c3de0d3ef2ab"
+keep-rollin@0.1.0:
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/keep-rollin/-/keep-rollin-0.1.0.tgz#126ab7f66a1708b535d47df04754f3492f5f65e2"
 
 kind-of@^3.0.2:
   version "3.1.0"
